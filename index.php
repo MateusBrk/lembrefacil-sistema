@@ -1,14 +1,12 @@
 <?php
 session_start();
 require_once 'services/ApiClient.php'; // Inclui a classe ApiClient para interagir com a API
-require 'conexao.php'; // Inclui a conexão com o banco de dados
 
-// Exemplo de uso da classe ApiClient
-$apiClient = new ApiClient();
+// Defina a URL base da sua API
+$apiClient = new ApiClient('https://web-production-2a8d.up.railway.app/'); // Substitua pela sua URL da API
 
 // Agora você pode chamar métodos da ApiClient para acessar os dados
-$medicos = $apiClient->getMedicos(); // Supondo que a classe tenha esse método
-
+$medicos = $apiClient->listarMedicos(); // Supondo que a classe tenha esse método
 ?>
 <!doctype html>
 <html lang="en">
